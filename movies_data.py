@@ -8,7 +8,6 @@ import questionary
 with open("/Users/alexfarina/Desktop/Code/MoviePicker/OMBD_key.txt", "r") as f:
     API_KEY = f.read().strip()
 
-#API_KEY = "c0599d48"  # OMDb API key
 INPUT_FILE = "movies.txt"
 OUTPUT_FILE = "movies.csv"
 
