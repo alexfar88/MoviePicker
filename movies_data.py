@@ -5,7 +5,10 @@ import sys
 import questionary
 
 #### constants for API Key and file names ####
-API_KEY = "c0599d48"  # OMDb API key
+with open("/Users/alexfarina/Desktop/Code/MoviePicker/OMBD_key.txt", "r") as f:
+    API_KEY = f.read().strip()
+
+#API_KEY = "c0599d48"  # OMDb API key
 INPUT_FILE = "movies.txt"
 OUTPUT_FILE = "movies.csv"
 
@@ -85,7 +88,7 @@ action = questionary.select(
     choices=[
         "Create a NEW movie list",
         "Add a movie to the existing list",
-        "Exiting"
+        "Exit"
     ]
 ).ask()
 
@@ -99,6 +102,6 @@ elif action == "Add a movie to the existing list":
         movie_name = questionary.text("Enter the movie title:").ask()
         add_movie(movie_name)
 else:
-    print("Exiting")
+    print("Exit")
 
 
